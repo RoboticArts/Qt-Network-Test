@@ -83,6 +83,15 @@ public slots:
 
     bool ClientSend(void);
     void ClientRead(void);
+
+    bool SliderXSend(void);
+    bool SliderYSend(void);
+
+    void setSliderControladoX(int value);
+    void setSliderControladoY(int value);
+
+private slots:
+    void on_pushButtonSetting_clicked();
 };
 
 #endif // MAINWINDOW_H

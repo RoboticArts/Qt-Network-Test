@@ -6,60 +6,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>576</width>
-    <height>583</height>
+    <width>608</width>
+    <height>334</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>QtNetwork</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QPlainTextEdit" name="plainTextEditServer">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>160</y>
-      <width>261</width>
-      <height>231</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QPlainTextEdit" name="plainTextEditClient">
-    <property name="geometry">
-     <rect>
-      <x>280</x>
-      <y>160</y>
-      <width>281</width>
-      <height>231</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButtonServerActivateDeactivate">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>80</y>
-      <width>81</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Activate</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButtonClientConnectDisconnect">
-    <property name="geometry">
-     <rect>
-      <x>400</x>
-      <y>80</y>
-      <width>121</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Connect</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="labelServer">
     <property name="geometry">
      <rect>
@@ -81,7 +35,7 @@
    <widget class="QLabel" name="labelClient">
     <property name="geometry">
      <rect>
-      <x>400</x>
+      <x>410</x>
       <y>20</y>
       <width>121</width>
       <height>31</height>
@@ -96,115 +50,11 @@
      <string>Client</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEditClientRemoteAddress">
-    <property name="geometry">
-     <rect>
-      <x>450</x>
-      <y>110</y>
-      <width>113</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>127.0.0.1</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="labelClientRemoteAddress">
-    <property name="geometry">
-     <rect>
-      <x>360</x>
-      <y>110</y>
-      <width>91</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Remote Address</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="lineEditClientRemotePort">
-    <property name="geometry">
-     <rect>
-      <x>450</x>
-      <y>130</y>
-      <width>113</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>1999</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="labelClientRemotePort">
-    <property name="geometry">
-     <rect>
-      <x>380</x>
-      <y>130</y>
-      <width>71</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Remote Port</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="lineEditServerPort">
-    <property name="geometry">
-     <rect>
-      <x>60</x>
-      <y>110</y>
-      <width>113</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>1999</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="labelServerPort">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>110</y>
-      <width>47</width>
-      <height>13</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Port</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="labelClientLocalAddress">
-    <property name="geometry">
-     <rect>
-      <x>400</x>
-      <y>50</y>
-      <width>151</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Local Address = ?</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="labelClientLocalPort">
-    <property name="geometry">
-     <rect>
-      <x>400</x>
-      <y>63</y>
-      <width>151</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Local Port = ?</string>
-    </property>
-   </widget>
    <widget class="QLineEdit" name="lineEditServerMessageToSend">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>400</y>
+      <x>20</x>
+      <y>80</y>
       <width>171</width>
       <height>20</height>
      </rect>
@@ -213,8 +63,8 @@
    <widget class="QLineEdit" name="lineEditClientMessageToSend">
     <property name="geometry">
      <rect>
-      <x>280</x>
-      <y>400</y>
+      <x>290</x>
+      <y>80</y>
       <width>191</width>
       <height>20</height>
      </rect>
@@ -223,8 +73,8 @@
    <widget class="QPushButton" name="pushButtonServerSend">
     <property name="geometry">
      <rect>
-      <x>190</x>
-      <y>400</y>
+      <x>200</x>
+      <y>80</y>
       <width>81</width>
       <height>23</height>
      </rect>
@@ -236,8 +86,8 @@
    <widget class="QPushButton" name="pushButtonClientSend">
     <property name="geometry">
      <rect>
-      <x>480</x>
-      <y>400</y>
+      <x>490</x>
+      <y>80</y>
       <width>81</width>
       <height>23</height>
      </rect>
@@ -246,14 +96,20 @@
      <string>Send</string>
     </property>
    </widget>
-   <widget class="QSlider" name="horizontalSliderValue">
+   <widget class="QSlider" name="SliderX">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>450</y>
+      <x>390</x>
+      <y>130</y>
       <width>160</width>
       <height>22</height>
      </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>4</height>
+     </size>
     </property>
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
@@ -262,8 +118,8 @@
    <widget class="QLabel" name="labelValue">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>480</y>
+      <x>390</x>
+      <y>160</y>
       <width>71</width>
       <height>16</height>
      </rect>
@@ -272,13 +128,78 @@
      <string>Value = 0</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButtonSetting">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>130</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Configuración</string>
+    </property>
+   </widget>
+   <widget class="QSlider" name="SliderY">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>200</y>
+      <width>160</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QSlider" name="SliderControladoX">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>140</y>
+      <width>160</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QSlider" name="SliderControladoY">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>180</y>
+      <width>160</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>110</y>
+      <width>101</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Sliders controlados</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>576</width>
+     <width>608</width>
      <height>21</height>
     </rect>
    </property>
