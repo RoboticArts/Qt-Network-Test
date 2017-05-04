@@ -37,6 +37,8 @@ public slots:
 
     void LabelServerActivateDesactivate();
     void LabelClientConnectDisconnect();
+    void EnableDisableServerSettings();
+    void EnableDisableClientSettings();
 };
 
 #endif // DIALOG_H

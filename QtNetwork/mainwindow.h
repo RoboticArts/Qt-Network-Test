@@ -90,6 +90,13 @@ public slots:
     void setSliderControladoX(int value);
     void setSliderControladoY(int value);
 
+    bool ShootSendZero(void);
+    bool ShootSendOne(void);
+
+    bool ArmedSendPressed(void);
+    void ArmedSendReleased(void);
+
+
 private slots:
     void on_pushButtonSetting_clicked();
 };
