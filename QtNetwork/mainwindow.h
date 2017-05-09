@@ -63,6 +63,10 @@ class MainWindow : public QMainWindow
 
 public:
     explicit MainWindow(QWidget *parent = 0);
+
+    void LabelInformationServerClient(QString mode);
+    void EnableDisableMainMenu(bool state);
+
     ~MainWindow();
 
 //private:
@@ -72,8 +76,8 @@ public slots:
     void ServerActivateDeactivate(void);
     void ServerNewConnection(void);
     void ServerRead(void);
-    void ServerSend(void);
-    void ServerNewValue(void);
+    //void ServerSend(void);
+    //void ServerNewValue(void);
 
     void ClientConnectDisconnect(void);
     void ClientStateChanged(QAbstractSocket::SocketState state);
@@ -81,20 +85,20 @@ public slots:
     void ClientConnected(void);
     void ClientError(QAbstractSocket::SocketError error);
 
-    bool ClientSend(void);
+   // bool ClientSend(void);
     void ClientRead(void);
 
     bool SliderXSend(void);
     bool SliderYSend(void);
 
-    void setSliderControladoX(int value);
-    void setSliderControladoY(int value);
+    //void setSliderControladoX(int value);
+    //void setSliderControladoY(int value);
 
     bool ShootSendZero(void);
     bool ShootSendOne(void);
 
-    bool ArmedSendPressed(void);
-    void ArmedSendReleased(void);
+    bool ArmedSendClicked(void);
+
 
 
 private slots:

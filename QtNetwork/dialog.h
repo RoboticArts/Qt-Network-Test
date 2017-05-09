@@ -27,6 +27,9 @@ public:
 
     QString getLineEditServerPort();
 
+    bool getStateServer(); // No usado
+    bool getStateClient(); // No usado
+
     ~Dialog();
 
 private:

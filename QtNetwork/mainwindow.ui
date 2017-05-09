@@ -6,101 +6,19 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>630</width>
-    <height>377</height>
+    <width>356</width>
+    <height>313</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>QtNetwork</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QLabel" name="labelServer">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>10</y>
-      <width>101</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>20</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>Server</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="labelClient">
-    <property name="geometry">
-     <rect>
-      <x>410</x>
-      <y>20</y>
-      <width>121</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>20</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>Client</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="lineEditServerMessageToSend">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>80</y>
-      <width>171</width>
-      <height>20</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="lineEditClientMessageToSend">
-    <property name="geometry">
-     <rect>
-      <x>290</x>
-      <y>80</y>
-      <width>191</width>
-      <height>20</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButtonServerSend">
-    <property name="geometry">
-     <rect>
-      <x>200</x>
-      <y>80</y>
-      <width>81</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Send</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButtonClientSend">
-    <property name="geometry">
-     <rect>
-      <x>490</x>
-      <y>80</y>
-      <width>81</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Send</string>
-    </property>
-   </widget>
    <widget class="QSlider" name="SliderX">
     <property name="geometry">
      <rect>
-      <x>390</x>
-      <y>130</y>
+      <x>90</x>
+      <y>100</y>
       <width>160</width>
       <height>22</height>
      </rect>
@@ -118,24 +36,11 @@
      <enum>Qt::Horizontal</enum>
     </property>
    </widget>
-   <widget class="QLabel" name="labelValue">
-    <property name="geometry">
-     <rect>
-      <x>390</x>
-      <y>160</y>
-      <width>71</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Value = 0</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="pushButtonSetting">
     <property name="geometry">
      <rect>
-      <x>260</x>
-      <y>130</y>
+      <x>140</x>
+      <y>60</y>
       <width>75</width>
       <height>23</height>
      </rect>
@@ -147,8 +52,8 @@
    <widget class="QSlider" name="SliderY">
     <property name="geometry">
      <rect>
-      <x>390</x>
-      <y>200</y>
+      <x>90</x>
+      <y>170</y>
       <width>160</width>
       <height>22</height>
      </rect>
@@ -158,58 +63,13 @@
     </property>
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
-    </property>
-   </widget>
-   <widget class="QSlider" name="SliderControladoX">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>140</y>
-      <width>160</width>
-      <height>22</height>
-     </rect>
-    </property>
-    <property name="maximum">
-     <number>255</number>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
-    </property>
-   </widget>
-   <widget class="QSlider" name="SliderControladoY">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>180</y>
-      <width>160</width>
-      <height>22</height>
-     </rect>
-    </property>
-    <property name="maximum">
-     <number>255</number>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>110</y>
-      <width>101</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Sliders controlados</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButtonArmed">
     <property name="geometry">
      <rect>
-      <x>480</x>
-      <y>230</y>
+      <x>180</x>
+      <y>200</y>
       <width>91</width>
       <height>41</height>
      </rect>
@@ -224,8 +84,8 @@
    <widget class="QPushButton" name="pushButtonShoot">
     <property name="geometry">
      <rect>
-      <x>370</x>
-      <y>230</y>
+      <x>70</x>
+      <y>200</y>
       <width>91</width>
       <height>41</height>
      </rect>
@@ -237,13 +97,31 @@
      <string>DISPARAR</string>
     </property>
    </widget>
+   <widget class="QLabel" name="labelInformationServerClient">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>20</y>
+      <width>181</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Modo: Sin conexión</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>630</width>
+     <width>356</width>
      <height>21</height>
     </rect>
    </property>

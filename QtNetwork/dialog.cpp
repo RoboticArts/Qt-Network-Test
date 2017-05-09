@@ -116,7 +116,10 @@ void Dialog::EnableDisableClientSettings() //Activa o Desactiva el CLIENTE
         ui -> checkBoxClient -> setEnabled(0);
         ui -> lineEditClientRemoteAddress ->setEnabled(0);
         ui -> lineEditClientRemotePort -> setEnabled(0);
-        ui -> labelInformationServerClient -> setText("Actuando como SERVIDOR");
+        w -> LabelInformationServerClient("server");
+        w -> EnableDisableMainMenu(0); // No se permite usar el menu en esta máquina
+       // ui -> labelInformationServerClient -> setText("Actuando como SERVIDOR");
+
     }
     else
     {
@@ -124,8 +127,11 @@ void Dialog::EnableDisableClientSettings() //Activa o Desactiva el CLIENTE
         ui -> checkBoxClient -> setEnabled(1);
         ui -> lineEditClientRemoteAddress ->setEnabled(1);
         ui -> lineEditClientRemotePort -> setEnabled(1);
-        ui -> labelInformationServerClient -> setText("Actuando como");
+        w -> LabelInformationServerClient("nothing");
+        w -> EnableDisableMainMenu(0); // No se habilita el menu
+       // ui -> labelInformationServerClient -> setText("Actuando como");
     }
+
 }
 
 void Dialog::EnableDisableServerSettings() //Activa o Desactiva el SERVIDOR
@@ -135,13 +141,27 @@ void Dialog::EnableDisableServerSettings() //Activa o Desactiva el SERVIDOR
         // Desactiva la configuracion del servidor
         ui -> checkBoxServer -> setEnabled(0);
         ui -> lineEditServerPort -> setEnabled(0);
-        ui -> labelInformationServerClient -> setText("Actuando como CLIENTE");
+        w -> LabelInformationServerClient("client");
+        w -> EnableDisableMainMenu(1); // La maquina remota puede usar el menu
+       // ui -> labelInformationServerClient -> setText("Actuando como CLIENTE");
     }
     else
     {
-        // Activa la configuración del cliente
+        // Activa la configuración del servidor
         ui -> checkBoxServer -> setEnabled(1);
         ui -> lineEditServerPort -> setEnabled(1);
-        ui -> labelInformationServerClient -> setText("Actuando como");
+        w -> LabelInformationServerClient("nothing");
+        w -> EnableDisableMainMenu(0); //No se habilita el menu (estado inicial)
+       // ui -> labelInformationServerClient -> setText("Actuando como");
     }
+}
+
+bool Dialog::getStateClient()
+{
+    return ui -> checkBoxClient -> checkState();
+}
+
+bool Dialog::getStateServer()
+{
+    return ui -> checkBoxServer -> checkState();
 }
