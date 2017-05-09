@@ -1,14 +1,16 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "dialog.h"
-
+#include <QCloseEvent>
 
 
 extern Dialog *d;
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
-// AÑADIR EL MISMO TRUCO QUE LOS SLIDERS EN LOS BOTONES DE DISPARAR Y ARMAR POR SI EL LAG
+// Cerrar ventana
+// Inhabilitar sliders
+// Corregir cuadro remote adress
 
 CConnection::CConnection(QObject *parent) :
     QTcpSocket(parent)
@@ -312,18 +314,24 @@ bool MainWindow::ClientSend(void)
 
 bool MainWindow::SliderXSend(void)
 {
+    if(d->getStateClient()) //Siempre que esta máquina actue como maquina remota
+    {
         QString text = "X" + QString::number(ui -> SliderX -> value());
         QByteArray data = text.toUtf8();
         return client->write(data) == data.size();
+    }
+    return 0;
 }
 
 bool MainWindow::SliderYSend(void)
 {
-
+    if(d->getStateClient()) //Siempre que esta máquina actue como maquina remota
+    {
         QString text = "Y" + QString::number(ui -> SliderY -> value());
         QByteArray data = text.toUtf8();
         return client->write(data) == data.size();
-
+    }
+    return 0;
 }
 
 
@@ -331,40 +339,52 @@ bool MainWindow::SliderYSend(void)
 
 bool MainWindow::ShootSendZero()
 {
-   ui -> pushButtonShoot -> setStyleSheet("background-color: rgba(255,0,0,0.6);  border-style: outset;");
-   QString text = "S0";
-   QByteArray data = text.toUtf8();
-   return client->write(data) == data.size();
+    if(d->getStateClient()) //Siempre que esta máquina actue como maquina remota
+    {
+        ui -> pushButtonShoot -> setStyleSheet("background-color: rgba(255,0,0,0.6);  border-style: outset;");
+        QString text = "S0";
+        QByteArray data = text.toUtf8();
+        return client->write(data) == data.size();
+    }
+    return 0;
 }
 
 bool MainWindow::ShootSendOne()
 {
-    ui -> pushButtonShoot -> setStyleSheet("background-color: rgba(0,255,0,0.6);  border-style: outset;");
-    QString text = "S1";
-    QByteArray data = text.toUtf8();
-    return client->write(data) == data.size();
+    if(d->getStateClient()) //Siempre que esta máquina actue como maquina remota
+    {
+        ui -> pushButtonShoot -> setStyleSheet("background-color: rgba(0,255,0,0.6);  border-style: outset;");
+        QString text = "S1";
+        QByteArray data = text.toUtf8();
+        return client->write(data) == data.size();
+    }
+    return 0;
 }
 
 bool MainWindow::ArmedSendClicked()
 {
-    QString text = ui -> pushButtonArmed -> text();
+    if(d->getStateClient()) //Siempre que esta máquina actue como maquina remota
+    {
+        QString text = ui -> pushButtonArmed -> text();
 
-    if(text == "ARMAR")
-    {
-        ui -> pushButtonArmed -> setStyleSheet("background-color: rgba(0,255,0,0.6);  border-style: outset;");
-        ui -> pushButtonArmed -> setText("ARMADO");
-        QString text = "A1";
-        QByteArray data = text.toUtf8();
-        return client->write(data) == data.size();
+        if(text == "ARMAR")
+        {
+            ui -> pushButtonArmed -> setStyleSheet("background-color: rgba(0,255,0,0.6);  border-style: outset;");
+            ui -> pushButtonArmed -> setText("ARMADO");
+            QString text = "A1";
+            QByteArray data = text.toUtf8();
+            return client->write(data) == data.size();
+        }
+        else
+        {
+            ui -> pushButtonArmed -> setStyleSheet("background-color: rgba(255,0,0,0.6);  border-style: outset;");
+            ui -> pushButtonArmed -> setText("ARMAR");
+            QString text = "A0";
+            QByteArray data = text.toUtf8();
+            return client->write(data) == data.size();
+        }
     }
-    else
-    {
-        ui -> pushButtonArmed -> setStyleSheet("background-color: rgba(255,0,0,0.6);  border-style: outset;");
-        ui -> pushButtonArmed -> setText("ARMAR");
-        QString text = "A0";
-        QByteArray data = text.toUtf8();
-        return client->write(data) == data.size();
-    }
+    return 0;
 }
 
 
@@ -414,4 +434,10 @@ void MainWindow::EnableDisableMainMenu(bool state)
     ui -> pushButtonArmed -> setEnabled(state);
     ui -> pushButtonShoot -> setEnabled(state);
 
+}
+
+void MainWindow::closeEvent (QCloseEvent *event)
+{
+    event -> accept(); // Se acepta el evento
+    d->close(); // Se cierra la ventana "Configuracion IP"
 }

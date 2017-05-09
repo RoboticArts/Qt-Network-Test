@@ -2,6 +2,7 @@
 #include "ui_dialog.h"
 #include "mainwindow.h"
 
+
 extern MainWindow *w;
 
 Dialog::Dialog(QWidget *parent) :
@@ -165,3 +166,6 @@ bool Dialog::getStateServer()
 {
     return ui -> checkBoxServer -> checkState();
 }
+
+
+

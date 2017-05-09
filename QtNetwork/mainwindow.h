@@ -66,6 +66,7 @@ public:
 
     void LabelInformationServerClient(QString mode);
     void EnableDisableMainMenu(bool state);
+    void closeEvent (QCloseEvent *event);
 
     ~MainWindow();
 
