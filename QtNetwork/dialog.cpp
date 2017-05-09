@@ -119,7 +119,7 @@ void Dialog::EnableDisableClientSettings() //Activa o Desactiva el CLIENTE
         ui -> lineEditClientRemotePort -> setEnabled(0);
         w -> LabelInformationServerClient("server");
         w -> EnableDisableMainMenu(0); // No se permite usar el menu en esta máquina
-       // ui -> labelInformationServerClient -> setText("Actuando como SERVIDOR");
+       // Actuando como SERVIDOR
 
     }
     else
@@ -130,7 +130,7 @@ void Dialog::EnableDisableClientSettings() //Activa o Desactiva el CLIENTE
         ui -> lineEditClientRemotePort -> setEnabled(1);
         w -> LabelInformationServerClient("nothing");
         w -> EnableDisableMainMenu(0); // No se habilita el menu
-       // ui -> labelInformationServerClient -> setText("Actuando como");
+       // Actuando como
     }
 
 }
@@ -144,7 +144,7 @@ void Dialog::EnableDisableServerSettings() //Activa o Desactiva el SERVIDOR
         ui -> lineEditServerPort -> setEnabled(0);
         w -> LabelInformationServerClient("client");
         w -> EnableDisableMainMenu(1); // La maquina remota puede usar el menu
-       // ui -> labelInformationServerClient -> setText("Actuando como CLIENTE");
+       // Actuando como CLIENTE
     }
     else
     {
@@ -153,7 +153,7 @@ void Dialog::EnableDisableServerSettings() //Activa o Desactiva el SERVIDOR
         ui -> lineEditServerPort -> setEnabled(1);
         w -> LabelInformationServerClient("nothing");
         w -> EnableDisableMainMenu(0); //No se habilita el menu (estado inicial)
-       // ui -> labelInformationServerClient -> setText("Actuando como");
+       //Actuando como
     }
 }
 

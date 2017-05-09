@@ -5,52 +5,11 @@
 #include <QTcpServer>
 #include <QTcpSocket>
 
+#include <network.h>
+
 namespace Ui {
 class MainWindow;
 }
-
-class CConnection : public QTcpSocket
-{
-    Q_OBJECT
-
-public:
-    CConnection(QObject *parent = 0);
-    bool SendMessage(const QString &message);
-
-public slots:
-    void Read(void);
-};
-
-
-
-
-class CClient : public QTcpSocket
-{
-    Q_OBJECT
-
-public:
-    CClient(QObject *parent = 0);
-};
-
-
-
-
-
-class CServer : public QTcpServer
-{
-    Q_OBJECT
-
-public:
-    CServer(QObject *parent = 0);
-
-signals:
-    void newConnection(CConnection *connection);
-
-protected:
-    void incomingConnection(qintptr socketDescriptor) Q_DECL_OVERRIDE;
-};
-
-
 
 
 
@@ -70,15 +29,14 @@ public:
 
     ~MainWindow();
 
-//private:
+private:
     Ui::MainWindow *ui;
 
 public slots:
     void ServerActivateDeactivate(void);
     void ServerNewConnection(void);
     void ServerRead(void);
-    //void ServerSend(void);
-    //void ServerNewValue(void);
+
 
     void ClientConnectDisconnect(void);
     void ClientStateChanged(QAbstractSocket::SocketState state);
@@ -86,24 +44,25 @@ public slots:
     void ClientConnected(void);
     void ClientError(QAbstractSocket::SocketError error);
 
-   // bool ClientSend(void);
     void ClientRead(void);
 
     bool SliderXSend(void);
     bool SliderYSend(void);
 
-    //void setSliderControladoX(int value);
-    //void setSliderControladoY(int value);
+    void setSliderX(int value);
+    void setSliderY(int value);
 
     bool ShootSendZero(void);
     bool ShootSendOne(void);
 
     bool ArmedSendClicked(void);
 
+    void on_pushButtonSetting_clicked(); //Boton "configuracion"
+
 
 
 private slots:
-    void on_pushButtonSetting_clicked();
+
 };
 
 #endif // MAINWINDOW_H

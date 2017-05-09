@@ -13,6 +13,7 @@ int main(int argc, char *argv[])
     w = new MainWindow;
 
     d = new Dialog;
+
     w -> show();
 
     return a.exec();
